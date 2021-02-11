@@ -42,4 +42,10 @@ describe('First Steps with with WDIO', () => {
     button.waitForExist();
     expect(button).toHaveAttrContaining('type', 'submit');
   })
+
+  it('populate button has the correct value', () => {
+    const button = $('#populate');
+    button.waitForExist();
+    expect(button).toHaveValue('Populate');
+  })
 })

@@ -24,9 +24,22 @@ describe('First Steps with with WDIO', () => {
     expect(link).toHaveLink('https://www.iana.org/domains/example');
   })
 
-  it('title content equals ', () => {
+  it('title content equals', () => {
     const element = $('h1');
     element.waitForExist();
     expect(element).toHaveText('Example Domain');
+  })
+
+  it('title content equals', () => {
+    const element = $('h1');
+    element.waitForExist();
+    expect(element).toHaveText('Example Domain');
+  })
+
+  it('submit button is disabled', () => {
+    browser.url('https://devexpress.github.io/testcafe/example/');
+    const button = $('#submit-button');
+    button.waitForExist();
+    expect(button).toHaveAttrContaining('type', 'submit');
   })
 })

@@ -48,4 +48,8 @@ describe('First Steps with with WDIO', () => {
     button.waitForExist();
     expect(button).toHaveValue('Populate');
   })
+
+  it('save screenshot', () => {
+    browser.saveScreenshot('screenshots/screenshot.png');
+  })
 })

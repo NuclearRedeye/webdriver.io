@@ -6,8 +6,13 @@ describe('First Steps with with WDIO', () => {
     expect(browser).toHaveTitle('Example Domain');
   })
 
-  it('Load https://webdriver.io', () => {
-    browser.url('https://webdriver.io');
-    browser.pause(3000);
+  it('h1 should be visible', () => {
+    const h1 = $('h1');
+    expect(h1).toBeVisible();
+  })
+
+  it('p should be visible', () => {
+    const p = $('p');
+    expect(p).toBeVisible();
   })
 })

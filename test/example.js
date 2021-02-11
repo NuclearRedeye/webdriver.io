@@ -3,4 +3,9 @@ describe('First Steps with with WDIO', () => {
     browser.url('http://www.example.com');
     browser.pause(3000);
   })
+
+  it('Load https://webdriver.io', () => {
+    browser.url('https://webdriver.io');
+    browser.pause(3000);
+  })
 })

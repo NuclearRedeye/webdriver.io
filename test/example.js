@@ -23,4 +23,10 @@ describe('First Steps with with WDIO', () => {
     link.waitForExist();
     expect(link).toHaveLink('https://www.iana.org/domains/example');
   })
+
+  it('title content equals ', () => {
+    const element = $('h1');
+    element.waitForExist();
+    expect(element).toHaveText('Example Domain');
+  })
 })

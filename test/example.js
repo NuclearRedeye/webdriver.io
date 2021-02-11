@@ -15,4 +15,9 @@ describe('First Steps with with WDIO', () => {
     const p = $('p');
     expect(p).toBeVisible();
   })
+
+  it('link should equal', () => {
+    const link = $('a');
+    expect(link).toHaveLink('https://www.iana.org/domains/example');
+  })
 })

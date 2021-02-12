@@ -36,4 +36,11 @@ describe('Browser Actions', () => {
     checkbox.click();
     browser.pause(1000);
   })
+
+  it('can select an option in a select box', () => {
+    const select = $('#preferred-interface');
+    select.waitForExist();
+    select.selectByVisibleText('JavaScript API');
+    browser.pause(1000);
+  })
 })

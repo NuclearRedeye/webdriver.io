@@ -1,4 +1,5 @@
 describe('Browser Actions', () => {
+
   it('can set the value of an input element', () => {
     browser.url('https://devexpress.github.io/testcafe/example/');
     const input = $('#developer-name');
@@ -11,5 +12,12 @@ describe('Browser Actions', () => {
     input.addValue(' ');
     input.addValue('Bloggs');
     browser.pause(3000);
+  })
+
+  it('can click a button', () => {
+    const button = $('#populate');
+    button.waitForExist();
+    button.click();
+    button.doubleClick();
   })
 })

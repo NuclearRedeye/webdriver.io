@@ -52,4 +52,9 @@ describe('First Steps with with WDIO', () => {
   it('save screenshot', () => {
     browser.saveScreenshot('screenshots/screenshot.png');
   })
+
+  it('set browser viewport', () => {
+    browser.setWindowSize(1280, 720);
+    browser.pause(3000);
+  })
 })

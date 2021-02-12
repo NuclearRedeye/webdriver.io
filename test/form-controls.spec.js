@@ -30,7 +30,7 @@ describe('Form Controls', () => {
     expect(input).toHaveValue('Joe Bloggs');
   })
 
-  // How can you assert that a button has been clicked?
+  // TODO: How can you assert that a button has been clicked?
   it('can click a button', () => {
     const button = $('#populate');
     button.waitForExist();

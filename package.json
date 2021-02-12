@@ -4,7 +4,7 @@
   "description": "Exercises from the Udemy course Automated Software Testing with WebdriverIO",
   "main": "index.js",
   "scripts": {
-    "test": "mkdir ./screenshots && wdio wdio.conf.js"
+    "test": "mkdir -p ./screenshots && wdio wdio.conf.js"
   },
   "keywords": [
     "udemy"

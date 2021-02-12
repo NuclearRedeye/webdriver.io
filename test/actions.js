@@ -1,21 +1,36 @@
-describe('Browser Actions', () => {
+describe('Form Controls', () => {
+
+  before(() => {
+    browser.url('https://devexpress.github.io/testcafe/example/');
+  });
+
+  afterEach(() => {
+    browser.pause(1000);
+  });
 
   it('can set the value of an input element', () => {
-    browser.url('https://devexpress.github.io/testcafe/example/');
     const input = $('#developer-name');
     input.waitForExist();
     input.setValue('Joe Bloggs');
-    browser.pause(1000);
-    input.clearValue();
-    browser.pause(1000);
-    input.addValue('Joe');
-    browser.pause(500);
-    input.addValue(' ');
-    browser.pause(500);
-    input.addValue('Bloggs');
-    browser.pause(1000);
+    expect(input).toHaveValue('Joe Bloggs');
   })
 
+  it('can clear the value of an input element', () => {
+    const input = $('#developer-name');
+    input.waitForExist();
+    input.clearValue();
+    expect(input).toHaveValue('');
+  })
+
+  it('can clear the value of an input element', () => {
+    const input = $('#developer-name');
+    input.addValue('Joe');
+    input.addValue(' ');
+    input.addValue('Bloggs');
+    expect(input).toHaveValue('Joe Bloggs');
+  })
+
+  // How can you assert that a button has been clicked?
   it('can click a button', () => {
     const button = $('#populate');
     button.waitForExist();
@@ -24,23 +39,23 @@ describe('Browser Actions', () => {
   })
 
   it('can select a radio button', () => {
-    const button = $('#linux');
-    button.waitForExist();
-    button.click();
-    browser.pause(1000);
+    const radio = $('#linux');
+    radio.waitForExist();
+    radio.click();
+    expect(radio.isSelected()).toBe(true);
   })
 
   it('can select a checkbox', () => {
     const checkbox = $('#remote-testing');
     checkbox.waitForExist();
     checkbox.click();
-    browser.pause(1000);
+    expect(checkbox.isSelected()).toBe(true);
   })
 
   it('can select an option in a select box', () => {
     const select = $('#preferred-interface');
     select.waitForExist();
     select.selectByVisibleText('JavaScript API');
-    browser.pause(1000);
+    expect(select.getText('option:checked')).toMatch('JavaScript API');
   })
 })

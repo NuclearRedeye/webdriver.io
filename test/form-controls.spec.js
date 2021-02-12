@@ -8,6 +8,12 @@ describe('Form Controls', () => {
     browser.pause(1000);
   });
 
+  it('submit button is disabled', () => {
+    const button = $('#submit-button');
+    button.waitForExist();
+    expect(button).toHaveAttrContaining('type', 'submit');
+  })
+
   it('can set the value of an input element', () => {
     const input = $('#developer-name');
     input.waitForExist();
@@ -28,6 +34,12 @@ describe('Form Controls', () => {
     input.addValue(' ');
     input.addValue('Bloggs');
     expect(input).toHaveValue('Joe Bloggs');
+  })
+
+  it('button has the correct value', () => {
+    const button = $('#populate');
+    button.waitForExist();
+    expect(button).toHaveValue('Populate');
   })
 
   // TODO: How can you assert that a button has been clicked?
